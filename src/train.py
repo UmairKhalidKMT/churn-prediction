@@ -160,8 +160,8 @@ def main() -> None:
     final_model = search.best_estimator_
 
     # 4. Evaluate tuned model on test set
-    y_test_pred = final_model.predict(X_test)
-    y_test_proba = final_model.predict_proba(X_test)[:, 1]
+    y_test_pred = final_model.predict(X_test) # type: ignore
+    y_test_proba = final_model.predict_proba(X_test)[:, 1] # type: ignore
 
     print(f"\n=== Tuned {best_name} Test Evaluation ===")
     print(f"Best Params: {search.best_params_}")
